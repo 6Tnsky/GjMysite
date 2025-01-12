@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import News_post
+
 
 def home(request):
     return render(request, 'main/home.html')
@@ -11,3 +13,7 @@ def contact(request):
 
 def services(request):
     return render(request, 'main/services.html')
+
+def news(request):
+    news = News_post.objects.all()
+    return render(request, 'main/news.html', {'news': news})

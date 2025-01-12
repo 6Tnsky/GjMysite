@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Новости и вести{% endblock %}
+
+{% block content %}
+
+<h1>Наши новости</h1>
+<br>
+{% for new in news %}
+    <div>
+        <h3> {{ new.title }} </h3>
+        <h4> {{ new.short_description }} </h4>
+        <h6> {{ new.text }} </h6>
+        <p> Автор: {{ new.author }}   Дата: {{ new.pub_date }} </p>
+
+    </div>
+{% endfor %}
+
+{% endblock %}
